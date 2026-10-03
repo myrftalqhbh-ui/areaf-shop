@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تفاصيل المنتج | أرياف</title>
-<meta name="description" content="تفاصيل المنتج وتوصيل مجاني خلال 40 دقيقة في عمان - أرياف">
+<title>تفاصيل المنتج | دلمون</title>
+<meta name="description" content="تفاصيل المنتج وتوصيل مجاني خلال 40 دقيقة في البحرين - دلمون">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#004d7a">
 <meta property="og:type" content="product">
-<meta property="og:site_name" content="أرياف">
-<meta property="og:locale" content="ar_OM">
-<meta property="og:title" content="تفاصيل المنتج | أرياف">
-<meta property="og:description" content="توصيل مجاني خلال 40 دقيقة في عمان - أرياف">
+<meta property="og:site_name" content="دلمون">
+<meta property="og:locale" content="ar_BH">
+<meta property="og:title" content="تفاصيل المنتج | دلمون">
+<meta property="og:description" content="توصيل مجاني خلال 40 دقيقة في البحرين - دلمون">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
@@ -116,13 +116,13 @@ h1 { font-size: 24px; color: #111; line-height: 1.5; font-weight: 800; }
   <header class="Header_header__HSEQ9">
     <div class="Header_nav__DVSK7">
       <div class="Header_logoWithCatalog__v4fgc">
-        <a class="Logo_logo__oq6_b" href="/"><img alt="أرياف" src="/assets/images/areaf-logo.webp" class="Logo_fullLogo__l2rPp"></a>
+        <a class="Logo_logo__oq6_b" href="/"><img alt="دلمون" src="/assets/images/delmon-logo.png" class="Logo_fullLogo__l2rPp"></a>
         <button class="Header_homeBtn__Z1xQp" onclick="window.location.href='/#products'">المنتجات</button>
       </div>
       <div class="Header_sideWrapper__3FSV4">
         <div class="CartButton_wrapper__DN_bX">
           <button class="Button_button__xKXcy Button_primary__SrbPy" onclick="goToCart()">
-            <span id="header-total">0.000 ر.ع</span>
+            <span id="header-total">0.000 د.ب</span>
           </button>
         </div>
       </div>
@@ -153,12 +153,12 @@ h1 { font-size: 24px; color: #111; line-height: 1.5; font-weight: 800; }
         <div class="badges">
           <span class="badge">✅ طازج يومياً</span>
           <span class="badge blue">🚚 توصيل مجاني خلال 40 دقيقة</span>
-          <span class="badge blue">🇴🇲 داخل عمان</span>
+          <span class="badge blue">🇧🇭 داخل البحرين</span>
         </div>
         <p class="desc" itemprop="description" id="p-desc"></p>
         <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
           <meta itemprop="priceCurrency" content="QAR">
-          <span itemprop="price" content="" id="p-price"></span> <small>ر.ع</small>
+          <span itemprop="price" content="" id="p-price"></span> <small>د.ب</small>
           <link itemprop="availability" href="https://schema.org/InStock">
         </div>
         <div class="buy-area" id="buyArea"></div>
@@ -177,14 +177,14 @@ h1 { font-size: 24px; color: #111; line-height: 1.5; font-weight: 800; }
   </div>
 </main>
 
-<footer class="footer">أرياف — توصيل المنتجات الطازجة في عمان 🇴🇲<br>
+<footer class="footer">دلمون — توصيل المنتجات الطازجة في البحرين 🇧🇭<br>
 <a href="/prices">أسعار منتجاتنا اليوم</a> · <a href="/terms.html">الشروط والأحكام</a> · <a href="/privacy.html">سياسة الخصوصية</a> · <a href="/returns.html">سياسة الاسترجاع</a></footer>
 
 <!-- شريط السلة العائم السفلي -->
 <div class="FloatingCartBar" id="floating-cart-bar" onclick="goToCart()">
   <div class="cart-text" id="cart-text-content">سلة المنتجات فارغة</div>
   <div style="display: flex; align-items: center; gap: 8px;">
-    <span class="cart-price" id="footer-total">0.000 ر.ع</span>
+    <span class="cart-price" id="footer-total">0.000 د.ب</span>
     <div class="cart-badge" id="footer-count">0</div>
   </div>
 </div>
@@ -237,18 +237,18 @@ function renderProduct(product, products) {
     document.getElementById('p-price').textContent = product.price;
     document.getElementById('p-price').setAttribute('content', product.price);
     const img = document.getElementById('p-img');
-    img.src = product.img || '/assets/images/areaf-logo.webp';
-    img.alt = name + ' - أرياف عمان';
-    document.getElementById('p-heading').textContent = name + ' — توصيل طازج في عمان من أرياف';
+    img.src = product.img || '/assets/images/delmon-logo.png';
+    img.alt = name + ' - دلمون البحرين';
+    document.getElementById('p-heading').textContent = name + ' — توصيل طازج في البحرين من دلمون';
     document.getElementById('p-longdesc').textContent =
-        'اطلب ' + name + ' الآن من متجر أرياف الإلكتروني واحصل على توصيل مجاني وسريع خلال 40 دقيقة لجميع مناطق عمان. ' +
+        'اطلب ' + name + ' الآن من متجر دلمون الإلكتروني واحصل على توصيل مجاني وسريع خلال 40 دقيقة لجميع مناطق البحرين. ' +
         (product.desc || '') +
         ' نحرص على وصول منتجاتنا طازجة يومياً من المزرعة إلى باب بيتك، مع إمكانية الدفع عند الاستلام أو بالكي نت.';
 
-    document.title = name + ' بسعر ' + product.price + ' ر.ع | توصيل مجاني في عمان - أرياف';
+    document.title = name + ' بسعر ' + product.price + ' د.ب | توصيل مجاني في البحرين - دلمون';
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content',
-        name + ' من أرياف بسعر ' + product.price + ' ر.ع شامل التوصيل — توصيل مجاني خلال 40 دقيقة لجميع مناطق عمان. اطلب أونلاين الآن.');
+        name + ' من دلمون بسعر ' + product.price + ' د.ب شامل التوصيل — توصيل مجاني خلال 40 دقيقة لجميع مناطق البحرين. اطلب أونلاين الآن.');
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute('content', document.title);
     const ogDesc = document.querySelector('meta[property="og:description"]');
@@ -327,7 +327,7 @@ function renderRelated(products) {
         return '<a class="rel-card" href="' + url + '">' +
             '<img src="' + esc(p.img) + '" alt="' + esc(p.name) + '" loading="lazy">' +
             '<div class="rel-body"><div class="rel-name">' + esc(p.name) + '</div>' +
-            '<div class="rel-price">' + esc(p.price) + ' ر.ع</div></div></a>';
+            '<div class="rel-price">' + esc(p.price) + ' د.ب</div></div></a>';
     }).join('');
 }
 
@@ -335,13 +335,13 @@ function showNotFound() {
     document.getElementById('loadingBox').classList.add('hidden');
     document.getElementById('notFoundBox').classList.remove('hidden');
     document.getElementById('crumb-name').textContent = 'غير متوفر';
-    document.title = 'المنتج غير متوفر | أرياف';
+    document.title = 'المنتج غير متوفر | دلمون';
 }
 
 function calculateTotal() {
     const total = window.CartTotal ? window.CartTotal() : 0;
     const totalCount = window.CartCount ? window.CartCount() : 0;
-    const formatted = total.toFixed(3) + ' ر.ع';
+    const formatted = total.toFixed(3) + ' د.ب';
     document.getElementById('header-total').textContent = formatted;
     document.getElementById('footer-total').textContent = formatted;
     document.getElementById('footer-count').textContent = totalCount;

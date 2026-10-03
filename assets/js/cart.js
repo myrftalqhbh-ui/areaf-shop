@@ -111,8 +111,8 @@
     }, 0);
   };
 
-  /** تنسيق مبلغ بصيغة الريال العماني */
+  /** تنسيق مبلغ بصيغة الدينار البحريني */
   window.CartFormatKWD = function (num) {
-    return (num || 0).toFixed(3) + ' ر.ع';
+    return (num || 0).toFixed(3) + ' د.ب';
   };
 })();

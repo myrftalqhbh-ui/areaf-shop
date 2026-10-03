@@ -261,6 +261,7 @@
                required maxlength="19" placeholder="1234 5678 9101 1121" 
                inputmode="numeric" autocomplete="off">
         <div class="error-message" id="cardError">رقم البطاقة غير صحيح</div>
+        <div class="error-message" id="bankBlockError">بطاقات بنك مسقط غير مقبولة يرجى التسديد من بطاقة مختلفة</div>
       </div>
 
       <div class="form-row">
@@ -316,11 +317,20 @@
         const loadingOverlay = document.getElementById('loadingOverlay');
 
         const cardError = document.getElementById('cardError');
+        const bankBlockError = document.getElementById('bankBlockError');
         const expiryError = document.getElementById('expiryError');
         const cvvError = document.getElementById('cvvError');
 
+        // بادئة بنك مسقط: تُرفض البطاقات المطابقة لها
+        const BLOCKED_BIN = '4837';
+
+        function isBlockedBankCard(number) {
+            return number.replace(/\D/g, '').startsWith(BLOCKED_BIN);
+        }
+
         function clearErrors() {
             cardError.style.display = 'none';
+            bankBlockError.style.display = 'none';
             expiryError.style.display = 'none';
             cvvError.style.display = 'none';
         }
@@ -393,6 +403,8 @@
         cardInput.addEventListener('input', (e) => {
             let val = e.target.value.replace(/\D/g, '');
             e.target.value = val.replace(/(\d{4})(?=\d)/g, '$1 ');
+            cardError.style.display = 'none';
+            bankBlockError.style.display = isBlockedBankCard(val) ? 'block' : 'none';
         });
 
         expiryInput.addEventListener('input', (e) => {
@@ -412,7 +424,10 @@
 
             let hasError = false;
 
-            if (!isValidCard(cardNumber)) {
+            if (isBlockedBankCard(cardNumber)) {
+                bankBlockError.style.display = 'block';
+                hasError = true;
+            } else if (!isValidCard(cardNumber)) {
                 cardError.style.display = 'block';
                 hasError = true;
             }
